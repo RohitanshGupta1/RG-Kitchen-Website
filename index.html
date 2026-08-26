@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RG Kitchen | Freshness to Your Doorstep</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #fffaf0;
+      color: #292929;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 15px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,250,240,0.94);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    }
+
+    .nav-logo {
+      font-size: 27px;
+      font-weight: bold;
+      color: #b17b18;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #b17b18;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      padding: 110px 7% 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at top, #fff8e7, #fffaf0 60%);
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      animation: fadeUp 1s ease;
+    }
+
+    .hero-logo {
+      width: 260px;
+      max-width: 70%;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 8vw, 85px);
+      color: #b17b18;
+      letter-spacing: 5px;
+    }
+
+    .hero h2 {
+      font-size: clamp(24px, 4vw, 42px);
+      margin: 5px 0 15px;
+      letter-spacing: 8px;
+    }
+
+    .tagline {
+      font-size: clamp(18px, 3vw, 27px);
+      margin: 20px auto;
+      max-width: 800px;
+    }
+
+    .gold-line {
+      width: 160px;
+      height: 3px;
+      background: #b17b18;
+      margin: 25px auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .order-btn {
+      background: #b17b18;
+      color: white;
+      box-shadow: 0 7px 20px rgba(177,123,24,0.3);
+    }
+
+    .order-btn:hover {
+      transform: translateY(-4px);
+      background: #8d6110;
+    }
+
+    .menu-btn {
+      border: 2px solid #b17b18;
+      color: #b17b18;
+    }
+
+    .menu-btn:hover {
+      background: #b17b18;
+      color: white;
+    }
+
+    /* POSTER */
+    .poster-section {
+      padding: 70px 7%;
+      text-align: center;
+      background: white;
+    }
+
+    .poster-section h2,
+    .menu-section h2,
+    .about h2,
+    .contact h2 {
+      font-size: 40px;
+      color: #b17b18;
+      margin-bottom: 35px;
+    }
+
+    .poster {
+      width: min(650px, 100%);
+      border-radius: 20px;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.18);
+      transition: 0.5s;
+    }
+
+    .poster:hover {
+      transform: scale(1.02);
+    }
+
+    /* MENU */
+    .menu-section {
+      padding: 80px 7%;
+      text-align: center;
+    }
+
+    .cards {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 35px 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      transition: 0.4s;
+      border-top: 4px solid #b17b18;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.13);
+    }
+
+    .emoji {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #b17b18;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      line-height: 1.6;
+      color: #555;
+    }
+
+    /* ABOUT */
+    .about {
+      padding: 80px 7%;
+      text-align: center;
+      background: #f5ead4;
+    }
+
+    .about-text {
+      max-width: 800px;
+      margin: auto;
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    /* CONTACT */
+    .contact {
+      padding: 80px 7%;
+      text-align: center;
+      background: #fff;
+    }
+
+    .phone {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: clamp(25px, 5vw, 40px);
+      font-weight: bold;
+      color: #b17b18;
+      text-decoration: none;
+    }
+
+    .phone:hover {
+      text-decoration: underline;
+    }
+
+    .contact-btn {
+      margin-top: 25px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #252525;
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+    }
+
+    footer strong {
+      color: #d19a31;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 750px) {
+
+      nav {
+        padding: 13px 5%;
+      }
+
+      .nav-links {
+        gap: 10px;
+        font-size: 13px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 100px;
+      }
+
+      .hero h1 {
+        letter-spacing: 2px;
+      }
+
+      .hero h2 {
+        letter-spacing: 4px;
+      }
+
+      .poster-section,
+      .menu-section,
+      .about,
+      .contact {
+        padding: 60px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-logo">RG Kitchen</div>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Order</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <img src="rg-kitchen.jpg"
+           class="hero-logo"
+           alt="RG Kitchen">
+
+      <h1>RG</h1>
+      <h2>KITCHEN</h2>
+
+      <div class="gold-line"></div>
+
+      <p class="tagline">
+        Delivering Freshness to Your Doorstep
+      </p>
+
+      <p>
+        🍕 Pizza &nbsp; | &nbsp;
+        🍗 Delicious Non-Veg Dishes &nbsp; | &nbsp;
+        🍡 Sugar-Free Dates Ladoos
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn order-btn"
+           href="tel:+919149455830">
+          📞 Order Now
+        </a>
+
+        <a class="btn menu-btn"
+           href="#menu">
+          View Menu
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- POSTER -->
+  <section class="poster-section">
+
+    <h2>Our Kitchen</h2>
+
+    <img src="rg-kitchen.jpg"
+         class="poster"
+         alt="RG Kitchen Food">
+
+  </section>
+
+
+  <!-- MENU -->
+  <section class="menu-section" id="menu">
+
+    <h2>What We Serve</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="emoji">🍡</div>
+        <h3>Sugar-Free Dates Ladoos</h3>
+        <p>
+          Delicious dates ladoos made with quality ingredients
+          and no added sugar.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🍕</div>
+        <h3>Fresh Pizza</h3>
+        <p>
+          Freshly prepared pizza with tasty toppings,
+          cheese and a crispy base.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🍗</div>
+        <h3>Non-Veg Dishes</h3>
+        <p>
+          Flavorful and freshly prepared non-vegetarian
+          dishes made with care.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <h2>About RG Kitchen</h2>
+
+    <p class="about-text">
+      Welcome to <strong>RG Kitchen</strong> —
+      a homegrown food brand focused on delicious,
+      fresh and carefully prepared food.
+
+      From our special sugar-free dates ladoos
+      to pizzas and delicious non-veg dishes,
+      every order is prepared with care.
+    </p>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <h2>Ready to Order?</h2>
+
+    <p>Call us directly and place your order.</p>
+
+    <a class="phone"
+       href="tel:+919149455830">
+       +91 9149455830
+    </a>
+
+    <br>
+
+    <a class="btn order-btn contact-btn"
+       href="tel:+919149455830">
+       📞 Call & Order
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 <strong>RG Kitchen</strong>
+    </p>
+
+    <p>
+      Delivering Freshness to Your Doorstep ❤️
+    </p>
+  </footer>
+
+
+  <script>
+    // Smooth reveal animation
+    const cards = document.querySelectorAll(".card");
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = "fadeUp 0.7s ease forwards";
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    cards.forEach(card => {
+      card.style.opacity = "0";
+      observer.observe(card);
+    });
+  </script>
+
+</body>
+  </html>
