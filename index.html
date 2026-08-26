@@ -1,499 +1,1064 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>RG Kitchen | Freshness to Your Doorstep</title>
+    <title>RG Kitchen | Jammu</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    <meta
+        name="description"
+        content="RG Kitchen - Delivering Freshness to Your Doorstep in Jammu. Sugar-Free Dates Ladoos, Pizza and Delicious Non-Veg Dishes."
+    >
 
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: #fffaf0;
-      color: #292929;
-    }
+    <style>
 
-    /* NAVBAR */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 15px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255,250,240,0.94);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-    }
+        /* =========================
+           RESET
+        ========================= */
 
-    .nav-logo {
-      font-size: 27px;
-      font-weight: bold;
-      color: #b17b18;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      list-style: none;
-    }
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #fffaf2;
+            color: #29251f;
+        }
 
-    .nav-links a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-    .nav-links a:hover {
-      color: #b17b18;
-    }
+        a {
+            text-decoration: none;
+        }
 
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      padding: 110px 7% 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background:
-        radial-gradient(circle at top, #fff8e7, #fffaf0 60%);
-    }
 
-    .hero-content {
-      max-width: 1100px;
-      animation: fadeUp 1s ease;
-    }
+        /* =========================
+           NAVBAR
+        ========================= */
 
-    .hero-logo {
-      width: 260px;
-      max-width: 70%;
-      margin-bottom: 15px;
-    }
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
 
-    .hero h1 {
-      font-size: clamp(45px, 8vw, 85px);
-      color: #b17b18;
-      letter-spacing: 5px;
-    }
+            height: 78px;
 
-    .hero h2 {
-      font-size: clamp(24px, 4vw, 42px);
-      margin: 5px 0 15px;
-      letter-spacing: 8px;
-    }
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-    .tagline {
-      font-size: clamp(18px, 3vw, 27px);
-      margin: 20px auto;
-      max-width: 800px;
-    }
+            padding: 0 7%;
 
-    .gold-line {
-      width: 160px;
-      height: 3px;
-      background: #b17b18;
-      margin: 25px auto;
-    }
+            background: rgba(255, 250, 242, 0.96);
+            border-bottom: 1px solid #dec18b;
 
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
+            backdrop-filter: blur(12px);
+        }
 
-    .btn {
-      display: inline-block;
-      padding: 15px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+        .logo {
+            color: #b47b16;
+            font-size: 34px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
 
-    .order-btn {
-      background: #b17b18;
-      color: white;
-      box-shadow: 0 7px 20px rgba(177,123,24,0.3);
-    }
+        .logo span {
+            display: block;
+            text-align: center;
 
-    .order-btn:hover {
-      transform: translateY(-4px);
-      background: #8d6110;
-    }
+            color: #222;
 
-    .menu-btn {
-      border: 2px solid #b17b18;
-      color: #b17b18;
-    }
+            font-size: 9px;
+            letter-spacing: 5px;
+            margin-top: -5px;
+        }
 
-    .menu-btn:hover {
-      background: #b17b18;
-      color: white;
-    }
+        nav ul {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
 
-    /* POSTER */
-    .poster-section {
-      padding: 70px 7%;
-      text-align: center;
-      background: white;
-    }
+        nav ul li a {
+            color: #222;
+            font-size: 16px;
+            transition: 0.3s;
+        }
 
-    .poster-section h2,
-    .menu-section h2,
-    .about h2,
-    .contact h2 {
-      font-size: 40px;
-      color: #b17b18;
-      margin-bottom: 35px;
-    }
+        nav ul li a:hover {
+            color: #b47b16;
+        }
 
-    .poster {
-      width: min(650px, 100%);
-      border-radius: 20px;
-      box-shadow: 0 15px 45px rgba(0,0,0,0.18);
-      transition: 0.5s;
-    }
+        .nav-order {
+            background: #b47b16;
+            color: white;
 
-    .poster:hover {
-      transform: scale(1.02);
-    }
+            padding: 13px 22px;
 
-    /* MENU */
-    .menu-section {
-      padding: 80px 7%;
-      text-align: center;
-    }
+            border-radius: 30px;
 
-    .cards {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
+            transition: 0.3s;
+        }
 
-    .card {
-      background: white;
-      padding: 35px 20px;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      transition: 0.4s;
-      border-top: 4px solid #b17b18;
-    }
+        .nav-order:hover {
+            background: #8f610e;
+            transform: translateY(-2px);
+        }
 
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.13);
-    }
 
-    .emoji {
-      font-size: 55px;
-      margin-bottom: 15px;
-    }
+        /* =========================
+           HERO
+        ========================= */
 
-    .card h3 {
-      color: #b17b18;
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
+        .hero {
+            min-height: 650px;
 
-    .card p {
-      line-height: 1.6;
-      color: #555;
-    }
+            display: grid;
+            grid-template-columns: 1fr 1fr;
 
-    /* ABOUT */
-    .about {
-      padding: 80px 7%;
-      text-align: center;
-      background: #f5ead4;
-    }
+            align-items: center;
+            gap: 50px;
 
-    .about-text {
-      max-width: 800px;
-      margin: auto;
-      font-size: 20px;
-      line-height: 1.8;
-    }
+            padding: 70px 7%;
 
-    /* CONTACT */
-    .contact {
-      padding: 80px 7%;
-      text-align: center;
-      background: #fff;
-    }
+            background:
+                radial-gradient(
+                    circle at top right,
+                    #f5dfb7,
+                    transparent 40%
+                ),
+                #fffaf2;
 
-    .phone {
-      display: inline-block;
-      margin-top: 10px;
-      font-size: clamp(25px, 5vw, 40px);
-      font-weight: bold;
-      color: #b17b18;
-      text-decoration: none;
-    }
+            overflow: hidden;
+        }
 
-    .phone:hover {
-      text-decoration: underline;
-    }
+        .hero-content {
+            animation: slideUp 1s ease;
+        }
 
-    .contact-btn {
-      margin-top: 25px;
-    }
+        .welcome {
+            color: #b47b16;
 
-    /* FOOTER */
-    footer {
-      background: #252525;
-      color: white;
-      text-align: center;
-      padding: 30px 15px;
-    }
+            font-size: 14px;
+            letter-spacing: 4px;
 
-    footer strong {
-      color: #d19a31;
-    }
+            margin-bottom: 15px;
+        }
 
-    /* ANIMATION */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(35px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+        .hero h1 {
+            color: #b47b16;
 
-    /* MOBILE */
-    @media (max-width: 750px) {
+            font-size: clamp(55px, 7vw, 90px);
 
-      nav {
-        padding: 13px 5%;
-      }
+            line-height: 0.95;
 
-      .nav-links {
-        gap: 10px;
-        font-size: 13px;
-      }
+            margin-bottom: 20px;
+        }
 
-      .cards {
-        grid-template-columns: 1fr;
-      }
+        .hero h2 {
+            font-size: 28px;
+            font-weight: normal;
 
-      .hero {
-        padding-top: 100px;
-      }
+            margin-bottom: 20px;
+        }
 
-      .hero h1 {
-        letter-spacing: 2px;
-      }
+        .hero p {
+            max-width: 560px;
 
-      .hero h2 {
-        letter-spacing: 4px;
-      }
+            color: #635d54;
 
-      .poster-section,
-      .menu-section,
-      .about,
-      .contact {
-        padding: 60px 5%;
-      }
-    }
-  </style>
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+
+            margin-top: 32px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 14px 28px;
+
+            border-radius: 7px;
+
+            font-size: 16px;
+
+            transition: 0.3s;
+        }
+
+        .btn-gold {
+            background: #b47b16;
+            color: white;
+        }
+
+        .btn-gold:hover {
+            background: #8f610e;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .btn-outline {
+            border: 1px solid #b47b16;
+            color: #8f610e;
+        }
+
+        .btn-outline:hover {
+            background: #b47b16;
+            color: white;
+            transform: translateY(-4px);
+        }
+
+
+        /* =========================
+           HERO IMAGE
+        ========================= */
+
+        .hero-image {
+            animation: zoomIn 1.2s ease;
+        }
+
+        .hero-image img {
+          <img
+    src="images/708537189_178833623 -40577320 8312819475113179821_n.jpg"
+    alt="RG Kitchen"
+>
+            width: 100%;
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.18);
+
+            transition: 0.5s;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.02);
+        }
+
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+
+            padding: 55px 7%;
+
+            text-align: center;
+
+            background: white;
+        }
+
+        .feature {
+            padding: 25px;
+        }
+
+        .feature-icon {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .feature h3 {
+            color: #9a690f;
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            color: #777;
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .about-content {
+            background: #211d18;
+
+            color: white;
+
+            padding: 80px 10%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-small {
+            color: #d29a31;
+
+            font-size: 14px;
+            letter-spacing: 3px;
+
+            margin-bottom: 15px;
+        }
+
+        .about-content h2 {
+            font-size: 46px;
+            line-height: 1.1;
+
+            margin-bottom: 22px;
+        }
+
+        .about-content p {
+            color: #ddd;
+
+            max-width: 550px;
+
+            line-height: 1.8;
+        }
+
+        .about-btn {
+            width: fit-content;
+            margin-top: 28px;
+        }
+
+
+        /* =========================
+           SPECIALS
+        ========================= */
+
+        .specials {
+            padding: 70px 7%;
+
+            background: #fffaf2;
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+        }
+
+        .gold-line {
+            width: 75px;
+            height: 2px;
+
+            background: #b47b16;
+
+            margin: 15px auto;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.08);
+
+            transition: 0.35s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 18px 35px rgba(0,0,0,0.13);
+        }
+
+        .card-image {
+            height: 230px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.08);
+        }
+
+        .card-content {
+            padding: 22px;
+
+            text-align: center;
+        }
+
+        .card-content h3 {
+            color: #9a690f;
+
+            font-size: 22px;
+
+            margin-bottom: 8px;
+        }
+
+        .card-content p {
+            color: #777;
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           DELIVERY
+        ========================= */
+
+        .delivery {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+
+            padding: 45px 7%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #b47b16,
+                    #d29a31
+                );
+
+            color: white;
+        }
+
+        .delivery h2 {
+            font-size: 32px;
+        }
+
+        .delivery p {
+            margin-top: 7px;
+        }
+
+        .delivery .btn {
+            background: #211d18;
+            color: white;
+        }
+
+        .delivery .btn:hover {
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            padding: 55px 7%;
+
+            background: white;
+
+            text-align: center;
+        }
+
+        .stat h2 {
+            color: #b47b16;
+            font-size: 40px;
+        }
+
+        .stat p {
+            color: #666;
+            margin-top: 5px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            padding: 75px 7%;
+
+            background: #fffaf2;
+        }
+
+        .contact-box {
+            max-width: 700px;
+
+            margin: auto;
+
+            padding: 40px;
+
+            background: white;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.07);
+        }
+
+        .contact-item {
+            font-size: 18px;
+
+            margin: 16px 0;
+        }
+
+        .contact-item strong {
+            color: #a66f0d;
+        }
+
+        .contact-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-top: 28px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #211d18;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px 15px;
+
+            line-height: 1.7;
+        }
+
+        footer span {
+            color: #d29a31;
+        }
+
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes slideUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        @keyframes zoomIn {
+
+            from {
+                opacity: 0;
+                transform: scale(0.93);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            nav {
+                height: auto;
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .nav-order {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+
+                padding: 50px 6%;
+
+                text-align: center;
+            }
+
+            .hero-content p {
+                margin: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                padding: 40px 7%;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                padding: 60px 8%;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 35px;
+            }
+
+            .delivery {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .contact-buttons .btn {
+                width: 100%;
+            }
+
+        }
+
+
+        /* SMALL PHONES */
+
+        @media (max-width: 450px) {
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+
+            .about-content h2 {
+                font-size: 38px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <div class="nav-logo">RG Kitchen</div>
 
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Order</a></li>
-    </ul>
-  </nav>
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
+    <nav>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
+        <div class="logo">
+            RG
+            <span>KITCHEN</span>
+        </div>
 
-    <div class="hero-content">
+        <ul>
 
-      <img src="rg-kitchen.jpg"
-           class="hero-logo"
-           alt="RG Kitchen">
+            <li>
+                <a href="#home">Home</a>
+            </li>
 
-      <h1>RG</h1>
-      <h2>KITCHEN</h2>
+            <li>
+                <a href="#about">About Us</a>
+            </li>
 
-      <div class="gold-line"></div>
+            <li>
+                <a href="#menu">Menu</a>
+            </li>
 
-      <p class="tagline">
-        Delivering Freshness to Your Doorstep
-      </p>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
 
-      <p>
-        🍕 Pizza &nbsp; | &nbsp;
-        🍗 Delicious Non-Veg Dishes &nbsp; | &nbsp;
-        🍡 Sugar-Free Dates Ladoos
-      </p>
+        </ul>
 
-      <div class="hero-buttons">
-        <a class="btn order-btn"
-           href="tel:+919149455830">
-          📞 Order Now
+        <a
+            href="https://wa.me/919149455830"
+            target="_blank"
+            class="nav-order"
+        >
+            Order Now 🛒
         </a>
 
-        <a class="btn menu-btn"
-           href="#menu">
-          View Menu
+    </nav>
+
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="welcome">
+                WELCOME TO
+            </div>
+
+            <h1>
+                RG Kitchen
+            </h1>
+
+            <h2>
+                Delivering Freshness to Your Doorstep
+            </h2>
+
+            <p>
+                Sugar-Free Dates Ladoos, delicious pizzas,
+                flavorful non-veg dishes and much more —
+                freshly prepared with love and quality
+                ingredients.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="https://wa.me/919149455830"
+                    target="_blank"
+                    class="btn btn-gold"
+                >
+                    Order Now 🛒
+                </a>
+
+                <a
+                    href="#menu"
+                    class="btn btn-outline"
+                >
+                    View Menu
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <img
+                src="images/rg-kitchen.jpg"
+                alt="RG Kitchen Food"
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FEATURES
+    ========================== -->
+
+    <section class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🌿
+            </div>
+
+            <h3>
+                Fresh Ingredients
+            </h3>
+
+            <p>
+                Fresh and quality ingredients
+                in every dish.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🍯
+            </div>
+
+            <h3>
+                Sugar-Free Options
+            </h3>
+
+            <p>
+                Delicious sugar-free
+                dates ladoos.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🛵
+            </div>
+
+            <h3>
+                Fast Delivery
+            </h3>
+
+            <p>
+                Fresh food delivered
+                to your doorstep.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT SECTION
+    ========================== -->
+
+    <section class="about" id="about">
+
+        <div class="about-content">
+
+            <div class="about-small">
+                ABOUT RG KITCHEN
+            </div>
+
+            <h2>
+                Made with Love,
+                <br>
+                Served with Care.
+            </h2>
+
+            <p>
+                At RG Kitchen, we believe that great food
+                starts with fresh ingredients, careful
+                preparation and a lot of love.
+
+                From our sugar-free sweets to delicious
+                pizzas and non-veg dishes, every order is
+                prepared with care and hygiene.
+            </p>
+
+            <a
+                href="#menu"
+                class="btn btn-gold about-btn"
+            >
+                Explore Our Food
+            </a>
+
+        </div>
+
+        <div class="specials" id="menu">
+
+            <div class="section-title">
+
+                <h2>
+                    Our Specialties
+                </h2>
+
+                <div class="gold-line"></div>
+
+            </div>
+
+
+            <div class="cards">
+
+
+                <!-- CARD 1 -->
+
+                <div class="card">
+
+                    <div class="card-image">
+
+                        <img
+                            src="images/rg-kitchen.jpg"
+                            alt="Sugar Free Dates Ladoos"
+                        >
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>
+                            Dates Ladoos
+                        </h3>
+
+                        <p>
+                            Sugar-free, delicious and
+                            made with natural ingredients.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 2 -->
+
+                <div class="card">
+
+                    <div class="card-image">
+
+                        <img
+                            src="images/rg-kitchen.jpg"
+                            alt="Fresh Pizza"
+                        >
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>
+                            Delicious Pizza
+                        </h3>
+
+                        <p>
+                            Freshly prepared pizza
+                            loaded with tasty toppings.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 3 -->
+
+                <div class="card">
+
+                    <div class="card-image">
+
+                        <img
+                            src="images/rg-kitchen.jpg"
+                            alt="Non Veg Food"
+                        >
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>
+                            Non-Veg Dishes
+                        </h3>
+
+                        <p>
+                            Rich, flavorful and freshly
+                            prepared non-veg dishes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         DELIVERY BANNER
+    ========================== -->
+
+    <section class="delivery">
+
+        <div>
+
+            <h2>
+                Craving something delicious?
+            </h2>
+
+            <p>
+                Order now and enjoy your favorite
+                food at home.
+            </p>
+
+        </div>
+
+        <a
+            href="https://wa.me/919149455830"
+            target="_blank"
+            class="btn"
+        >
+            WhatsApp Order 💬
         </a>
-      </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- POSTER -->
-  <section class="poster-section">
 
-    <h2>Our Kitchen</h2>
-
-    <img src="rg-kitchen.jpg"
-         class="poster"
-         alt="RG Kitchen Food">
-
-  </section>
-
-
-  <!-- MENU -->
-  <section class="menu-section" id="menu">
-
-    <h2>What We Serve</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <div class="emoji">🍡</div>
-        <h3>Sugar-Free Dates Ladoos</h3>
-        <p>
-          Delicious dates ladoos made with quality ingredients
-          and no added sugar.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="emoji">🍕</div>
-        <h3>Fresh Pizza</h3>
-        <p>
-          Freshly prepared pizza with tasty toppings,
-          cheese and a crispy base.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="emoji">🍗</div>
-        <h3>Non-Veg Dishes</h3>
-        <p>
-          Flavorful and freshly prepared non-vegetarian
-          dishes made with care.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-
-    <h2>About RG Kitchen</h2>
-
-    <p class="about-text">
-      Welcome to <strong>RG Kitchen</strong> —
-      a homegrown food brand focused on delicious,
-      fresh and carefully prepared food.
-
-      From our special sugar-free dates ladoos
-      to pizzas and delicious non-veg dishes,
-      every order is prepared with care.
-    </p>
-
-  </section>
-
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-
-    <h2>Ready to Order?</h2>
-
-    <p>Call us directly and place your order.</p>
-
-    <a class="phone"
-       href="tel:+919149455830">
-       +91 9149455830
-    </a>
-
-    <br>
-
-    <a class="btn order-btn contact-btn"
-       href="tel:+919149455830">
-       📞 Call & Order
-    </a>
-
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer>
-    <p>
-      © 2026 <strong>RG Kitchen</strong>
-    </p>
-
-    <p>
-      Delivering Freshness to Your Doorstep ❤️
-    </p>
-  </footer>
-
-
-  <script>
-    // Smooth reveal animation
-    const cards = document.querySelectorAll(".card");
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.animation = "fadeUp 0.7s ease forwards";
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    cards.forEach(card => {
-      card.style.opacity = "0";
-      observer.observe(card);
-    });
-  </script>
-
-</body>
-  </html>
+    <!-- =========================
+         STATS
+    ===
